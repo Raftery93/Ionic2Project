@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title>
+      Ionic 2 Project
+    </ion-title>
+  </ion-navbar>
+  <ion-toolbar color="dark">
+    <ion-title>Music App</ion-title>
+  </ion-toolbar>
+
+<!-- Create button to add lyrics -->
+  <ion-buttons end>
+    <button ion-button icon-only color="dark" (click)="addSong()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+  </ion-buttons>
+
+</ion-header>
+
+<ion-content padding>
+
+  <p>
+    If you wish to add song lyrics, click the button in the top right and watch your lyrics added below.
+  </p>
+
+<!-- Syncing lyrics using data binding -->
+  <ion-list>
+    <ion-item *ngFor="let song of songs | async" (click)="showOptions(song.$key, song.title)">
+      {{song.title}}
+    </ion-item>
+  </ion-list>
+
+<!-- Create button for camera, inside an ion ion-card
+    Create placeholder for the image taken -->
+  <ion-card>
+    <ion-card-content>
+      Click button below to add an Album Photo.
+      <br>
+      <button ion-button icon-only color="secondary" (click)="takePicture()"><ion-icon name="camera"></ion-icon></button>
+      <br> Current Album Photo:
+      <img [src]="base64Image" *ngIf="base64Image" />
+    </ion-card-content>
+  </ion-card>
+  <br>
+
+<!-- Create buttons for Recording -->
+  <ion-card>
+    <ion-card-content>
+      <button ion-button (click)="startRecording()">Start Recording</button>
+      <button ion-button (click)="stopRecording()">Stop Recording</button>
+      <br>
+      <button ion-button (click)="startPlayback()">Start Playback</button>
+      <button ion-button (click)="stopPlayback()">Stop Playback</button>
+      <br>
+    </ion-card-content>
+  </ion-card>
+  <br>
+  <br>
+  <br>
+  <br>
+  <!-- Create button for navigation to about page -->
+  <button ion-button block color="danger" (click)="navigateToAboutPage()">About</button>
+
+
+</ion-content>

@@ -1,0 +1,35 @@
+<!--
+  Generated template for the About page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="dark">
+    <ion-title>About</ion-title>
+  </ion-navbar>
+
+
+  <ion-toolbar color="dark">
+    <ion-title>Our Location:</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content padding>
+  <br>
+  <br>
+  <!-- map generated with marker via Iframe -->
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2385.6090549432793!2d-9.012753284438203!3d53.27862407996486!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485b9132cb2e133f%3A0x5a81260c20e02143!2sGMIT!5e0!3m2!1sen!2sie!4v1492806777852"
+    width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+<!-- FAB button for flashlight (toggle button) -->
+  <ion-fab bottom center>
+    <button color="{{isOn ? 'secondary' : 'light'}}" ion-fab (click)="toggleFlash()">
+      <ion-icon name="{{isOn ? 'ios-flash' : 'ios-flash-outline'}}"></ion-icon>
+    </button>
+  </ion-fab>
+
+</ion-content>
